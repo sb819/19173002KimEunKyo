@@ -5,8 +5,8 @@ import android.graphics.Movie;
 import java.util.ArrayList;
 
 public class MovieListResult {
-    String boofficeType;
+    String boxOfficeType;
     String showRange;
 
-    ArrayList<Movie> dailBoxOfficeList = new ArrayList<Movie>();
+    ArrayList<Movie> dailyBoxOfficeList = new ArrayList<Movie>();
 }

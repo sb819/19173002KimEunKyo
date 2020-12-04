@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.xbutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 makeRequest();
             }
         });
@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
                             println("응답 ->" + response);
                             processResponce(response);
                 }
-            }, new Response.ErrorListener() {
+            },
+                    new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             println("에러 ->" + error.getMessage());
@@ -83,6 +84,6 @@ public class MainActivity extends AppCompatActivity {
         {
             Gson gson = new Gson();
             MovieList movieList = gson.fromJson(response, MovieList.class );
-            println("영화 정보의 수 : " + movieList.boxOfficeResult.dailBoxOfficeList.size());
+            println("영화 정보의 수 : " + movieList.boxOfficeResult.dailyBoxOfficeList.size());
         }
 }
